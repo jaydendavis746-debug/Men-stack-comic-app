@@ -1,0 +1,14 @@
+<nav>
+<a href="/">Home Page</a>
+<% if (user) { %>
+  <a href="/auth/sign-out">Sign Out</a>
+  <a href="/comics"> Comics</a>
+  <a href="/genres">Genres</a>
+
+  <% } else { %>
+  <a href="/auth/sign-up">Join the universe</a>
+  <a href="/auth/sign-in">Enter the universe</a>
+  <% } %>
+
+
+</nav>

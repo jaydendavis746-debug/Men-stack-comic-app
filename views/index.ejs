@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic universe</title>
+ 
+</head>
+<body>
+    
+    <%- include('./partials/_navbar.ejs') %>
+    <% if(user){ %>
+        <h1>Welcome back, <%= user.username %></h1>
+    <% } else { %>
+    <h1>Welcome to Comic universe</h1>
+    <p>A site for comics lovers to gather and add all their favourtie comics to build a strong community.</p>
+    <% } %>
+</body>
+</html>

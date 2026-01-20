@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Add a comic</title>
+</head>
+<body>
+    <h1>Add a new Comic</h1>
+    <h2>Make sure that the comic you want to add does not already exist since we don't want duplicates</h2>
+    <p>If you're found to have added duplicates 3 times then your account will be permanately removed.</p>
+
+    <form action="/comics" method="POST">
+
+        
+        <label for="name">Comic's name:</label>
+        <input type="text" name="name" id="name" >
+
+         <div class="genres"></div>
+        <label for="genres">Genres:</label>
+         <% genres.forEach(genre => { %>
+            <label><%= genre.name %>?</label>
+            <input type="checkbox" name="genres[]" value="<%= genre._id %>">  
+         <% }) %>
+        </div>
+
+            
+        </select>
+        <div class="status">
+        <label for="chapters">Chapters:</label>
+        <input type="number" name="chapters" id="chapters" min: 0  required>
+
+        <label for="completed">Completed?</label>
+        <input type="checkbox" name="completed" id="completed" >
+
+        
+        <label for="ongoing">Ongoing?</label>
+        <input type="checkbox" name="ongoing" id="ongoing" required>
+        </div>
+
+        
+        <label for="author">Author(s):</label>
+        <input type="text" name="author" id="author" >
+
+        <label for="country">The comic's Country:</label>
+        <input type="text" name="country" id="country" >
+        
+        <label for=""></label>
+        <select name="category" id="category" required>
+            <option value="Manga">Manga</option>
+            <option value="Manwha">Mahwha</option>
+            <option value="Manhua">Manhua</option>
+            <option value="Comic-book">Comic-book</option>
+        </select>
+        
+        
+        <label for="description"><legend>description</legend></label>
+        <textarea name="description" id="description"></textarea>
+
+
+        <button type="submit">Add Comic</button>
+    </form>
+</body>
+</html>
