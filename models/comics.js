@@ -34,7 +34,7 @@ const comicSchema = mongoose.Schema({
         ref: 'User',
     },
 
-    genre:[{
+    genres:[{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Genre',
     }],

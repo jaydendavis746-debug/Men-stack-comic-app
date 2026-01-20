@@ -6,6 +6,7 @@
     <title> Add a comic</title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Add a new Comic</h1>
     <h2>Make sure that the comic you want to add does not already exist since we don't want duplicates</h2>
     <p>If you're found to have added duplicates 3 times then your account will be permanately removed.</p>
@@ -35,7 +36,7 @@
 
         
         <label for="ongoing">Ongoing?</label>
-        <input type="checkbox" name="ongoing" id="ongoing" required>
+        <input type="checkbox" name="ongoing" id="ongoing" >
         </div>
 
         
