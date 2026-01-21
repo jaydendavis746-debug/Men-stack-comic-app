@@ -35,9 +35,9 @@ app.use(
 );
 app.use(passUserToView);
 
-app.get('/', (req, res)=>{ 
-
-res.render('index.ejs', {user: req.session.user})
+app.get('/', async (req, res)=>{ 
+const comics = await Comic.find().sort({ likedByUsers: "desc" }).limit(3);
+res.render('index.ejs', {user: req.session.user, comics})
 })
 
 app.use('/auth', authController);

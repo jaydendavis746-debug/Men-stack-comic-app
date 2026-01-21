@@ -14,11 +14,11 @@
     <h2>This page is to browse all comics on our website that belongs to the <%=genre.name%> genre</h2>
     <p> <%= genre.description%></p>
 
-    <% if (comics.length === 0) { %>
+    <% if (genre.comics.length === 0) { %>
   <p>No comics in this genre yet.</p>
 <% } %>
     <div>
-    <% comics.forEach((comic)=> { %>
+    <% genre.comics.forEach((comic)=> { %>
         <a href="/comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
         <p>Chapters: <%= comic.chapters %></p>
         <p>Author: <%= comic.author%></p>

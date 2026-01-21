@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import Genre from '../models/genres.js';
-import Comic from '../models/genres.js'
+import Comic from '../models/comics.js'
 
 router.get('/', async (req, res)=>{
     const genres = await Genre.find().sort({name:1})
@@ -23,12 +23,15 @@ router.post('/', async(req, res)=>{
 });
 
 router.get('/:genreId', async(req, res)=>{
-    const genre = await Genre.findById(req.params.genreId)
-    console.log(genre)
-    const comics = await Comic.find({ genres: req.params.genreId})
-    console.log('This is', comics)
+    // the populate is used becasue in the genreSchema we refrence genre and schema uising teh virttual function
+    const genre = await Genre.findById(req.params.genreId).populate('comics');
+    console.log('I like', genre)
 
-    res.render('genres/show.ejs', {genre, comics})
+    /* const comics = await Comic.find({ genres: req.params.genreId})
+    console.log('This is', comics) */
+ 
+ 
+    res.render('genres/show.ejs', {genre})
 })
 
 export default router;

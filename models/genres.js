@@ -13,7 +13,15 @@ const genreSchema = mongoose.Schema({
         required: true,
         
     },
+
+    
 });
+
+genreSchema.virtual('comics', {
+  ref: 'Comic',
+  localField: '_id',
+  foreignField: 'genres'
+}); 
 
 const Genre = mongoose.model('Genre', genreSchema)
 
