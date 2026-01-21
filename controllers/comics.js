@@ -27,14 +27,19 @@ router.post('/', async (req, res)=>{
 
 router.get('/:comicId', async (req, res)=>{
     try{
-         const comic = await Comic.findById(req.params.comicId).populate('genres')
-      console.log(comic)
-    res.render('comics/show.ejs', {comic})
-} catch(error){
-    console.log(error)
-    res.redirect('/comics')
-}
-})
+        const comic = await Comic.findById(req.params.comicId).populate('genres')
+        const populatedComic = await Comic.findById(req.params.comicId).populate('publisher')
+        const userHasLiked = populatedComic.likedByUsers.some((user)=>{
+         return user == req.session.user._id;
+        });
+
+    res.render('comics/show.ejs', {comic, userHasLiked}) 
+
+    } catch(error){
+        console.log(error)
+        res.redirect('/comics')
+    }
+    })
 
 
 router.delete('/:comicId', async (req, res)=>{
@@ -76,6 +81,36 @@ router.put('/:comicId', async (req, res)=>{
     return res.send('Not authorized')
 }
 });
+
+
+router.post('/:comicId/liked-by/:userId', async (req, res)=>{
+    try{
+    await Comic.findByIdAndUpdate(req.params.comicId,{
+        $push:{likedByUsers: req.params.userId},
+    })
+    res.redirect(`/comics/${req.params.comicId}`)
+    
+
+    }catch(error){
+        console.log(error)
+        res.redirect('/')
+    }
+})
+
+router.delete('/:comicId/liked-by/:userId', async (req, res)=>{
+    try{
+    
+    await Comic.findByIdAndUpdate(req.params.comicId,{
+        $pull:{likedByUsers: req.params.userId},
+    })
+    res.redirect(`/comics/${req.params.comicId}`)
+    
+
+    }catch(error){
+        console.log(error)
+        res.redirect('/')
+    }
+})
 
 
 export default router;

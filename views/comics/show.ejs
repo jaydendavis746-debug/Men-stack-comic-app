@@ -11,6 +11,25 @@
     </nav>
 
  <h1><%= comic.name %> <%= comic.category%></h1>
+ <div id="liked">
+        <% if (userHasLiked){ %>
+    
+        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>?_method=DELETE" method="POST">
+
+        <button type="submit">💔</button>
+        <p>You have liked this comic!</p>
+      <% } else { %>
+    
+    
+        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>" method="POST">
+
+        <button type="submit">❤️</button>
+        <p>You have not liked this comic! </p>
+        </form>
+
+    <% } %>
+        <p>Liked by <%= comic.likedByUsers.length%> people.</p>
+    </div>
 
     <div class="show-status">
     <p>Chapters: <%= comic.chapters%></p>
@@ -38,7 +57,6 @@
      </form>
      <% } %>
     
-
-     
+    
 </body>
 </html>

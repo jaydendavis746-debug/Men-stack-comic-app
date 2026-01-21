@@ -44,7 +44,12 @@ const comicSchema = mongoose.Schema({
         type: String,
     
     },
-
+     likedByUsers: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 
 });
 
