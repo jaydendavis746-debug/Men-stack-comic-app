@@ -14,6 +14,7 @@ import authController from './controllers/auth.js'
 import comicsController from './controllers/comics.js'
 import genresController from './controllers/genres.js'
 
+import Comic from './models/comics.js'
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
