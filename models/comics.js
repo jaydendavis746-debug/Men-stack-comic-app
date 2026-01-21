@@ -39,6 +39,11 @@ const comicSchema = mongoose.Schema({
         ref: 'Genre',
     }],
 
+    description: {
+        type: String,
+    
+    },
+
 
 });
 

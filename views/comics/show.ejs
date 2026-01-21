@@ -3,9 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= comic.name%></title>
 </head>
 <body>
+    <nav>
+        <a href="/comics">Back to all Comics</a>
+    </nav>
+
+ <h1><%= comic.name %> <%= comic.category%></h1>
+
+    <div class="show-status">
+    <p>Chapters: <%= comic.chapters%></p>
+    <p>Written by: <%= comic.author %> in <%=comic.country %></p>
+    <% if (comic.ongoing){ %>
+        <p>status: Ongoing </p>
+     <% } else if(comic.completed){ %>
+        <p>Status: Completed</p>
+    <% }else { %>
+        <p>Status: Unknown</p>
+    <% } %>   
+    </div>
+    <div class="genres">
+        <p>Genres:</p>
+        <% comic.genres.forEach((genre)=>{ %>
+            <p><a href="/genres/<%=genre._id %>"> <%= genre.name %></a>,</p>
+        <% }) %>
+    </div>
+    <p class="description"> <%= comic.description %></p>
+
+    <% if(user){ %>
+        <a href="/comics/<%= comic._id%>/edit">Edit comic</a>
+     <% } %>
     
+
+     
 </body>
 </html>

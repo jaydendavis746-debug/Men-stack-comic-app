@@ -23,4 +23,27 @@ router.post('/', async (req, res)=>{
 
 })
 
+router.get('/:comicId', async (req, res)=>{
+    try{
+         const comic = await Comic.findById(req.params.comicId).populate('genres')
+      console.log(comic)
+    res.render('comics/show.ejs', {comic})
+} catch(error){
+    console.log(error)
+    res.redirect('/comics')
+}
+})
+
+router.get('/:comicId/edit', async (req, res) => {
+  const comic = await Comic.findById(req.params.comicId);
+  const genres = await Genre.find().sort({name: 1});
+
+  res.render('comics/edit.ejs', { comic, genres });
+});
+
+router.put('/:comicId', async (req, res)=>{
+    
+})
+
+
 export default router;

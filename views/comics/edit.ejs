@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Edit <%= comic.name%></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= comic.name %> <%= comic.category%></h1>
+    
+    <form action="/comics/<%=comic._id %>?_method=PUT" method="POST">
+
+        
+        <label for="name">Comic's name:</label>
+        <input type="text" name="name" id="name" value="<%= comic.name %> " >
+
+        <div class="genres">
+  <% genres.forEach(genre => { %>
+    <label>
+        <%= genre.name %>
+      <input type="checkbox" name="genres[]" value="<%= genre._id %>"
+      <% const comicGenreIds = comic.genres.map(id => id.toString());%>
+        <% if (comicGenreIds.includes(genre._id.toString() )) { %>
+          checked
+        <% } %> >
+      
+    </label>
+  <% }) %>
+</div>
+            
+        </select>
+        <div class="status">
+        <label for="chapters">Chapters:</label>
+        <input type="number" name="chapters" id="chapters" min: 0  required value="<%= comic.chapters %>">
+
+        <label for="completed">Completed?</label>
+        <input type="checkbox" name="completed" id="completed" <% if(comic.completed){ %>
+            checked
+        <% } %> >
+
+        
+        <label for="ongoing">Ongoing?</label>
+        <input type="checkbox" name="ongoing" id="ongoing" <% if(comic.ongoing){ %>
+            checked
+        <% } %> >
+        </div>
+
+        
+        <label for="author">Author(s):</label>
+        <input type="text" name="author" id="author" value="<%= comic.author %> ">
+
+        <label for="country">The comic's Country:</label>
+        <input type="text" name="country" id="country"value="<%= comic.country %>"">
+        
+        <label for=""></label>
+        <select name="category" id="category" required value="<%= comic.category%>">
+            <option value="Manga">Manga</option>
+            <option value="Manwha">Mahwha</option>
+            <option value="Manhua">Manhua</option>
+            <option value="Comic-book">Comic-book</option>
+        </select>
+        
+        
+        <label for="description"><legend>description</legend></label>
+        <textarea name="description" id="description" required value="<%= comic.description %>"></textarea>
+
+
+        <button type="submit">Edit Comic</button>
+    </form>
+</body>
+</html>
