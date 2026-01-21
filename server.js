@@ -34,17 +34,17 @@ app.use(
   })
 );
 app.use(passUserToView);
+
+app.get('/', (req, res)=>{ 
+
+res.render('index.ejs', {user: req.session.user})
+})
+
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/comics', comicsController);
 app.use('/genres', genresController);
 
-
-
-app.get('/', (req, res)=>{
-
-res.render('index.ejs/')
-})
 
 app.listen(port,  () =>{
      console.log(`The express app is ready on port ${port}!`);

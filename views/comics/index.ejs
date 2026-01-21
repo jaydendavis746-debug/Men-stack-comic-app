@@ -9,7 +9,7 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>All comics</h1>
     <h3>This page is to browse all comics added to our universe</h3>
-    <nav>
+    <nav id="comicList">
     <% comics.forEach((comic)=> { %>
         <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
         <p>Chapters: <%= comic.chapters %></p>

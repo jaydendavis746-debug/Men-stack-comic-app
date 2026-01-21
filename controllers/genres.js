@@ -1,6 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import Genre from '../models/genres.js';
+import Comic from '../models/genres.js'
 
 router.get('/', async (req, res)=>{
     const genres = await Genre.find().sort({name:1})
@@ -23,7 +24,11 @@ router.post('/', async(req, res)=>{
 
 router.get('/:genreId', async(req, res)=>{
     const genre = await Genre.findById(req.params.genreId)
- res.render('genres/show.ejs', {genre})
+    console.log(genre)
+    const comics = await Comic.find({ genres: req.params.genreId})
+    console.log('This is', comics)
+
+    res.render('genres/show.ejs', {genre, comics})
 })
 
 export default router;

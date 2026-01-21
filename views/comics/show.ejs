@@ -50,7 +50,7 @@
     </div>
     <p class="description"> <%= comic.description %></p>
 
-    <% if(user){ %>
+    <% if(comic.publisher.equals(user._id.toString() )){ %>
         <a href="/comics/<%= comic._id%>/edit">Edit comic</a>
         <form action="/comics/<%= comic._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= comic.name %> <%= comic.category%></button>
