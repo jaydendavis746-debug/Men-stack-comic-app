@@ -35,7 +35,7 @@ app.use(
 );
 app.use(passUserToView);
 app.use('/auth', authController);
-//app.use(isSignedIn);
+app.use(isSignedIn);
 app.use('/comics', comicsController);
 app.use('/genres', genresController);
 

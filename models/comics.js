@@ -32,6 +32,7 @@ const comicSchema = mongoose.Schema({
     publisher:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
+        required: true,
     },
 
     genres:[{
