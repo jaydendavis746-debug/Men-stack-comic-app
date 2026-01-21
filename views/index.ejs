@@ -18,6 +18,12 @@
     <% } %>
 
     <h2>Today's most popular comics</h2>
-    <% comics.forEach(()) %>
+    <div id="comicList">
+    <% comics.forEach((comic)=> { %>
+        <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
+        <p>Chapters: <%= comic.chapters %></p>
+        <p>Author: <%= comic.author%></p>
+    <% })%>
+    </div>
 </body>
 </html>
