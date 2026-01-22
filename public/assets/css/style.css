@@ -47,16 +47,6 @@ body{
    
 }
 
-.comicImage{
-    display: flex;
-    justify-content: center;
-    border: 0.5px solid;
-    border-radius: 1px ;
-    padding: 50px 20px;
-    width: 110px;
-     
-
-}
 
 a{
     text-decoration: none;
@@ -101,4 +91,13 @@ p{
     font-size: 1rem;
     padding: 0px 10px;
     
+}
+
+.comic-image {
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 1px ;
+    width: 130px;
+
 }

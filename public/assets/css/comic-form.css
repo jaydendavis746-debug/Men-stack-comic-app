@@ -106,7 +106,8 @@ input {
 }
 
 textarea{
-    padding: 6rem
+    width: 15rem;
+    height: 10rem;
 
 }
 
