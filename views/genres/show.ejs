@@ -22,6 +22,7 @@
    <% genre.comics.forEach((comic)=> { %>
         <div class="comic">
       <div class="comicImage"> <a href="/comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <strong> <%= comic.name %></strong>
         <strong>Chapters: <%= comic.chapters %></strong>
         <strong>Author: <%= comic.author%></strong>
         </div>

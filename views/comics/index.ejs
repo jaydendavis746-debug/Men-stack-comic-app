@@ -12,11 +12,12 @@
     <h3>This page is to browse all comics added to our universe</h3>
     <div class="comicList">
     <% comics.forEach((comic)=> { %>
-        <div class="comic">
-      <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+       <div class="comic">
+        <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <strong> <%= comic.name %></strong>
         <strong>Chapters: <%= comic.chapters %></strong>
         <strong>Author: <%= comic.author%></strong>
-        </div>
+      </div>
     <% })%>
     </div>
     <a href="comics/new">Add a comic</a>

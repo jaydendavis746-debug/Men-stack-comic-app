@@ -19,11 +19,14 @@
     <% } %>
 
     <h2>Today's most popular comics</h2>
-    <div id="popularComics">
+     <div class="comicList">
     <% comics.forEach((comic)=> { %>
-        <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
-        <p>Chapters: <%= comic.chapters %></p>
-        <p>Author: <%= comic.author%></p>
+      <div class="comic">
+        <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <strong><%= comic.name %></strong>   
+        <strong>Chapters: <%= comic.chapters %></strong>
+        <strong>Author: <%= comic.author%></strong>
+      </div>
     <% })%>
     </div>
 </body>
