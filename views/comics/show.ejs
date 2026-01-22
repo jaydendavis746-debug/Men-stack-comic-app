@@ -9,48 +9,58 @@
     <title><%= comic.name%></title>
 </head>
 <body>
-    <nav>
-        <a href="/comics">Back to all Comics</a>
-    </nav>
+    <header>
+    <%- include('../partials/_navbar.ejs') %>
+</header>
 
- <h1><img src="/assets/images/<%= comic.name.replace(/\W+/g, '-').toLowerCase()%>.png" alt="<%= comic.name %> <%= comic.category %>"></h1>
- <div id="liked">
-        <% if (userHasLiked){ %>
-    
-        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>?_method=DELETE" method="POST">
+<div id="liked">
+  
+ <img class="comic-image" src="/assets/images/<%= comic.name.replace(/\W+/g, '-').toLowerCase()%>.png" alt="<%= comic.name %> <%= comic.category %>" >
 
-        <button type="submit">💔</button>
-        <p>You have liked this comic!</p>
-      <% } else { %>
-    
-    
-        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>" method="POST">
-
-        <button type="submit">❤️</button>
-        <p>You have not liked this comic! </p>
-        </form>
-
-    <% } %>
-        <p>Liked by <%= comic.likedByUsers.length%> people.</p>
-    </div>
-
+    <div class="information">
     <div class="show-status">
     <p>Chapters: <%= comic.chapters%></p>
     <p>Written by: <%= comic.author %> in <%=comic.country %></p>
     <% if (comic.ongoing){ %>
-        <p>status: Ongoing </p>
+        <p>Status: Ongoing </p>
      <% } else if(comic.completed){ %>
         <p>Status: Completed</p>
     <% }else { %>
         <p>Status: Unknown</p>
     <% } %>   
     </div>
+
+    
     <div class="genres">
         <p>Genres:</p>
         <% comic.genres.forEach((genre)=>{ %>
             <p><a href="/genres/<%=genre._id %>"> <%= genre.name %></a>,</p>
         <% }) %>
     </div>
+    
+ <% if (userHasLiked){ %>
+    
+        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>?_method=DELETE" method="POST">
+
+         <strong>You've liked!</strong><button class="heart" type="submit">💔</button>
+       
+      <% } else { %>
+    
+    
+        <form action="/comics/<%=comic._id%>/liked-by/<%=user._id%>" method="POST">
+
+        <Strong>You've not liked! </Strong> <button class="heart" type="submit">❤️</button>
+        
+        </form>
+
+    <% } %>
+        <p>❤️ by <%= comic.likedByUsers.length%> people.</p>
+    </div>
+    </div>
+
+ 
+
+    <p> <%= comic.name%>'s Description:</p>
     <p class="description"> <%= comic.description %></p>
 
     <% if(comic.publisher.equals(user._id.toString() )){ %>

@@ -18,7 +18,7 @@
     <div class="comicList">
     <% comics.forEach((comic)=> { %>
        <div class="comic">
-        <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <a href="comics/<%= comic._id %>"><img class="comic-image" src="/assets/images/<%= comic.name.replace(/\W+/g, '-').replace(/^-+|-+$/g, '').toLowerCase()%>.png" alt="<%= comic.name %> <%= comic.category %>"></a> 
         <strong> <%= comic.name %></strong>
         <strong>Chapters: <%= comic.chapters %></strong>
         <strong>Author: <%= comic.author%></strong>
