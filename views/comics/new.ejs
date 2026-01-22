@@ -19,9 +19,12 @@
     <form action="/comics" method="POST">
 
         
-        <label for="name">Comic's name:</label>
-        <input type="text" name="name" id="name" >
+        <p>
+            <label for="name">Comic's name:</label>
+            <input type="text" name="name" id="name" >
+        </p>
 
+        <p>
          <div class="genres">
         <label for="genres">Genres:</label>
          <% genres.forEach(genre => { %>
@@ -29,40 +32,47 @@
             <input type="checkbox" name="genres[]" value="<%= genre._id %>">  
          <% }) %>
         </div>
-
-            
+        </p>
+         
+        
         </select>
         <div class="status">
-        <label for="chapters">Chapters:</label>
-        <input type="number" name="chapters" id="chapters" min: 0  required>
+        <p>
+            <label for="chapters">Chapters:</label>
+            <input type="number" name="chapters" id="chapters" min: 0  required>
+        </p>
 
+        <p>
         <label for="completed">Completed?</label>
         <input type="checkbox" name="completed" id="completed" >
 
         
         <label for="ongoing">Ongoing?</label>
         <input type="checkbox" name="ongoing" id="ongoing" >
+        </P>
         </div>
 
-        
+        <p>
         <label for="author">Author(s):</label>
         <input type="text" name="author" id="author" >
 
         <label for="country">The comic's Country:</label>
         <input type="text" name="country" id="country" >
-        
-        <label for=""></label>
+        </p>
+        <p>
+        <label for="category"></label>
         <select name="category" id="category" required>
             <option value="Manga">Manga</option>
             <option value="Manwha">Mahwha</option>
             <option value="Manhua">Manhua</option>
             <option value="Comic-book">Comic-book</option>
         </select>
+        </p>
         
-        
+        <p>
         <label for="description"><legend>description</legend></label>
         <textarea name="description" id="description" required></textarea>
-
+            </p>
 
         <button type="submit">Add Comic</button>
     </form>
