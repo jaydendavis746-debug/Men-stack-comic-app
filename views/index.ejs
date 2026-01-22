@@ -23,9 +23,10 @@
 
     <h2>Today's most popular comics</h2>
      <div class="comicList">
+      
     <% comics.forEach((comic)=> { %>
       <div class="comic">
-        <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <div class="comicImage"> <a href="comics/<%= comic._id %>"><h4><img src="/assets/images/<%= comic.name.replace(/\W+/g, '-').toLowerCase()%>.png" alt="<%= comic.name %> <%= comic.category %>"></h4></a> 
         <strong><%= comic.name %></strong>   
         <strong>Chapters: <%= comic.chapters %></strong>
         <strong>Author: <%= comic.author%></strong>

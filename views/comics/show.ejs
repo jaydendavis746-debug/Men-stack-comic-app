@@ -13,7 +13,7 @@
         <a href="/comics">Back to all Comics</a>
     </nav>
 
- <h1><%= comic.name %> <%= comic.category%></h1>
+ <h1><img src="/assets/images/<%= comic.name.replace(/\W+/g, '-').toLowerCase()%>.png" alt="<%= comic.name %> <%= comic.category %>"></h1>
  <div id="liked">
         <% if (userHasLiked){ %>
     
