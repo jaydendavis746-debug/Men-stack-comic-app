@@ -15,11 +15,13 @@
 
     <h1> Available comic genres</h1>
 
-    <% genres.forEach((genre)=>{ %>
-       <h2><a href="genres/<%=genre._id %>"><%=genre.name%></a></h2>
-    <% }) %>
 
-    <a href="genres/new">Add a genre</a>
+    <p>
+    <% genres.forEach((genre)=>{ %>
+       <strong ><a href="genres/<%=genre._id %>" id="genreList"><%=genre.name%></a></strong>
+    <% }) %>
+        </p>
+    <a href="genres/new" id="addGenre">Add a genre</a>
 
 </body>
 </html>
