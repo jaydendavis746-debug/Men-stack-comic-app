@@ -5,13 +5,15 @@
 
 <div id="navbarContainerLinks">
 <% if (user) { %>
-  <a href="/auth/sign-out">Sign Out</a>
-  <a href="/comics"> All Comics</a>
-  <a href="/genres">Filter by Genres </a>
+ <p> <a href="/auth/sign-out">Sign Out</a> </p>
+
+  <p> <a href="/comics"> All Comics</a> </p>
+
+  <p> <a href="/genres">Filter by Genres </a> </p>
 
   <% } else { %>
-  <a href="/auth/sign-up">Join the universe</a>
-  <a href="/auth/sign-in">Enter the universe</a>
+  <p> <a href="/auth/sign-up">Join the universe</a> </p>
+  <p> <a href="/auth/sign-in">Enter the universe</a> </p>
   <% } %>
 </div>
 

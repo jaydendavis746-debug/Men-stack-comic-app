@@ -1,19 +1,19 @@
 body{
-    background-color:aquamarine;
+    background-color:whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.5rem;
-    
+     color: black;
 }
 
 .nightMode{
-    background-color: midnightblue;
+    background-color: darkslateblue;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.5rem;
-    color: aliceblue;
+    color: azure;
    
 
 }
@@ -61,24 +61,21 @@ body{
 
 a{
     text-decoration: none;
+    color: paleturquoise ;
 
 }
 
 header {
-   
     padding: 0px 5px;
-    display: flex;
     width: 100%;
     height: 10%;
-    
-    
-    
    
 }
 
-#navbarConatiner{
+#navbarContainer{
 
     display: flex;
+    justify-content: space-between;
 }
 
 #navbarContainerLogo{
@@ -90,6 +87,7 @@ header {
 #navbarContainerLinks{
    display:flex;
     justify-content: flex-end;
+    align-items: flex-start;
 }
 
 a img{
@@ -99,4 +97,9 @@ a img{
    
   
 
+}
+p{
+    font-size: 1rem;
+    padding: 0px 10px;
+    
 }
