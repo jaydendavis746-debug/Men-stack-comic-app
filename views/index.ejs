@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comic universe</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
  
 </head>
 <body>
@@ -18,7 +19,7 @@
     <% } %>
 
     <h2>Today's most popular comics</h2>
-    <div id="">
+    <div id="popularComics">
     <% comics.forEach((comic)=> { %>
         <a href="comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
         <p>Chapters: <%= comic.chapters %></p>
