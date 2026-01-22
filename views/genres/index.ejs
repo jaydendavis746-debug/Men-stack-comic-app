@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
     <title>All genres</title>
 </head>
 <body>
+    <header>
     <%- include('../partials/_navbar.ejs') %>
+</header>
+
     <h1> Available comic genres</h1>
 
     <% genres.forEach((genre)=>{ %>

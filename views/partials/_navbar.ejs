@@ -1,5 +1,9 @@
-<nav>
-<a href="/">Home Page</a>
+<nav id="navbarContainer">
+  <div id="navbarContainerLogo">
+<a href="/"><img src="/assets/images/logo.png" alt="My website logo"></a>
+</div>
+
+<div id="navbarContainerLinks">
 <% if (user) { %>
   <a href="/auth/sign-out">Sign Out</a>
   <a href="/comics"> All Comics</a>
@@ -9,6 +13,6 @@
   <a href="/auth/sign-up">Join the universe</a>
   <a href="/auth/sign-in">Enter the universe</a>
   <% } %>
-
+</div>
 
 </nav>

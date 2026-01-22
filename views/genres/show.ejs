@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
     <title> Browse <%= genre.name%> comics</title>
 </head>
-<nav>
-    <a href="/genres">Back to all genres</a>
-</nav>
+<header>
+    <%- include('../partials/_navbar.ejs') %>
+</header>
 <body>
 
     <h1><%=genre.name%> comics</h1>

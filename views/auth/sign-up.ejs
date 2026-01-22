@@ -4,23 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <link rel="stylesheet" href="/assets/css/form.css">
+     <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
   <title>Sign Up</title>
 </head>
 <body>
   <h1>Create a new account!</h1>
   <form action="/auth/sign-up" method="POST">
+    <p>
     <label for="username">Username:</label>
     <input type="text" name="username" id="username" required />
+      </p>
+      <p>
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
+    </p>
+    <p> <label for="confirmPassword" class="confirm">Confirm Password:</label> 
     <input 
       type="password"
       name="confirmPassword"
       id="confirmPassword"
       required 
     />
-    <button type="submit">Sign up</button>
+    </p>
+
+   <p> <button type="submit">Sign up</button> </p>
   </form>
 
   <p>Already have an account <a href="/auth/sign-in">Enter our universe</a> here. </p>
