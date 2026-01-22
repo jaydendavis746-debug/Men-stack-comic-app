@@ -19,29 +19,28 @@
     <form action="/comics" method="POST">
 
         
-        <p>
+        <p class="comicLabels">
             <label for="name">Comic's name:</label>
             <input type="text" name="name" id="name" >
         </p>
 
-        <p>
+        <p class="genres-title"><label for="genres" class="genres"></label>Genres:</label> </p>
          <div class="genres">
-        <label for="genres">Genres:</label>
          <% genres.forEach(genre => { %>
             <label><%= genre.name %>?</label>
-            <input type="checkbox" name="genres[]" value="<%= genre._id %>">  
+            <input id="genreBox" type="checkbox" name="genres[]" value="<%= genre._id %>">  
          <% }) %>
         </div>
-        </p>
+      
          
         
         </select>
-        <div class="status">
-        <p>
+        
+        <p class="comicLabels">
             <label for="chapters">Chapters:</label>
             <input type="number" name="chapters" id="chapters" min: 0  required>
         </p>
-
+        <div class="status">
         <p>
         <label for="completed">Completed?</label>
         <input type="checkbox" name="completed" id="completed" >
@@ -52,13 +51,16 @@
         </P>
         </div>
 
-        <p>
-        <label for="author">Author(s):</label>
-        <input type="text" name="author" id="author" >
-
-        <label for="country">The comic's Country:</label>
-        <input type="text" name="country" id="country" >
-        </p>
+        <div id="origins">
+         <p class="comicLabels">
+            <label for="author">Author(s):</label>
+            <input type="text" name="author" id="author" >
+         </p>
+         <p class="comicLabels">
+            <label for="country">Comic's Country:</label>
+            <input type="text" name="country" id="country" >
+         </p>
+        </div>
         <p>
         <label for="category"></label>
         <select name="category" id="category" required>
@@ -70,7 +72,7 @@
         </p>
 
         <p>
-        <label for="description"><legend>description</legend></label>
+        <label for="description"><legend>description:</legend></label>
         <textarea name="description" id="description" required></textarea>
             </p>
 
