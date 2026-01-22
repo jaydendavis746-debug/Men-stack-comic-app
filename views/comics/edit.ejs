@@ -9,7 +9,9 @@
     <title> Edit <%= comic.name%></title>
 </head>
 <body>
+    <header>
     <%- include('../partials/_navbar.ejs') %>
+</header>
     <h1>Edit <%= comic.name %> <%= comic.category%></h1>
     
     <form action="/comics/<%=comic._id %>?_method=PUT" method="POST">
