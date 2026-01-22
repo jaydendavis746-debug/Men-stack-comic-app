@@ -4,15 +4,54 @@ body{
     flex-direction: column;
     align-items: center;
     font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.nightMode{
+    background-color: midnightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    color: aliceblue;
+    text-decoration: none;
 
 }
 
 #popularComics{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 10px;
     border-radius: 1px solid;
+    
+}
+
+.comicList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center ;
+    
+}
+
+.comic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px;
+    font-size: 1rem;
+   
+}
+
+.comicImage{
+    border: 0.5px solid;
+    border-radius: 1px ;
+    padding: 50px 50px;
+    
+
 }

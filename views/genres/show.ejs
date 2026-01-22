@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <title> Browse <%= genre.name%> comics</title>
 </head>
 <nav>
@@ -17,11 +18,13 @@
     <% if (genre.comics.length === 0) { %>
   <p>No comics in this genre yet.</p>
 <% } %>
-    <div>
-    <% genre.comics.forEach((comic)=> { %>
-        <a href="/comics/<%= comic._id %>"><h4><%= comic.name%></h4></a>
-        <p>Chapters: <%= comic.chapters %></p>
-        <p>Author: <%= comic.author%></p>
+    <div class="comicList">
+   <% genre.comics.forEach((comic)=> { %>
+        <div class="comic">
+      <div class="comicImage"> <a href="/comics/<%= comic._id %>"><h4><%= comic.name%></h4></a> </div> 
+        <strong>Chapters: <%= comic.chapters %></strong>
+        <strong>Author: <%= comic.author%></strong>
+        </div>
     <% })%>
     </div>
 </body>
