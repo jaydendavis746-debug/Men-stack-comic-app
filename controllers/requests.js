@@ -11,10 +11,20 @@ router.get('/', (req, res) => {
 
 
 router.post('/', async (req, res)=>{
+     console.log(req.body)
     req.body.publisher = req.session.user._id
     await Request.create(req.body)
     res.redirect('/')
 })
 
+
+router.get('/show.ejs', async (req, res) => {
+
+const requests = await Request.find().sort({createdAt: -1});
+
+return user == req.session.user._id;
+
+res.render('requests/show.ejs', {requests});
+})
 
 export default router

@@ -16,7 +16,10 @@ const requestSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
-})
+},
+{timestamps: true}
+
+);
 
 const Request = mongoose.model('request', requestSchema)
 
