@@ -5,7 +5,7 @@ import User from '../models/users.js'
 
 
 router.get('/', (req, res) => {
-    res.send('This is the page to requets for help')
+    res.send
 })
 
 
