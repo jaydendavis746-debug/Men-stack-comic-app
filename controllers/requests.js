@@ -2,7 +2,7 @@ import express from 'express'
 const router = express.Router()
 import Request from '../models/requests.js'
 import User from '../models/users.js'
-import { request } from 'http'
+
 
 
 router.get('/', (req, res) => {
@@ -22,9 +22,16 @@ router.get('/show.ejs', async (req, res) => {
 
 const requests = await Request.find().sort({createdAt: -1});
 
-return user == req.session.user._id;
+//  user = req.session.user._id;
 
-res.render('requests/show.ejs', {requests});
+res.render('requests/show.ejs', {requests} );
+})
+
+
+router.delete('/:requestId', async (req, res)=>{
+
+    await Request.findByIdAndDelete(req.params.requestId)
+    res.redirect('/');
 })
 
 export default router

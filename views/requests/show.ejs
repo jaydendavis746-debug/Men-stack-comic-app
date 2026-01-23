@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quieries</title>
+    <title>Queries</title>
 </head>
 <body>
 
@@ -11,15 +11,19 @@
 
     <% requests.forEach((request)=>{ %>
         <% if(request.publisher.equals(user._id.toString() )){ %>
+            <p><%= request.requestType %></p>
             <div>
-                <p><%= request.requestType></p>
-                <p> <%= request.description%> </p>
+                <p> <%= request.description %> </p>
+                <form action="/requests/<%= request._id%>?_method=DELETE" method="POST">
+                    <button type="submit">Delete Query</button>
+                </form>
+                
             </div>
         <% } else{ %>
             <h2>No quereis have been created </h2>
             <p>You can make a query  <strong> <a href="/requests">here</a></strong></p>
        <% } %>
-    })  %>
+     <% })  %>
     
 </body>
 </html>
