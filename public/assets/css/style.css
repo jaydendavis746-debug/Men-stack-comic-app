@@ -7,7 +7,7 @@ body{
      color: black;
 }
 
-.nightMode{
+.nightmode{
     background-color: darkslateblue;
     display: flex;
     flex-direction: column;
@@ -98,4 +98,11 @@ p{
     width: 140px;
     height: 140px;
 
+}
+
+
+#themeToggle {
+  border: none;
+  outline: none;
+  cursor: pointer ;
 }

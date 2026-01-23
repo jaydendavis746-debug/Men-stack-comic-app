@@ -24,7 +24,7 @@ strong{
     color: brown;
 }
 
-.nightMode{
+.nightmode{
     background-color: darkslateblue;
     display: flex;
     flex-direction: column;
@@ -99,3 +99,8 @@ nav p{
 }
 
 
+#themeToggle {
+  border: none;
+  outline: none;
+  cursor: pointer ;
+}

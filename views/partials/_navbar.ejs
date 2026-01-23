@@ -1,4 +1,8 @@
+
+
+
 <nav id="navbarContainer">
+
   <div id="navbarContainerLogo">
 <a href="/"><img src="/assets/images/logo.png" alt="My website logo"></a>
 </div>
@@ -15,10 +19,18 @@
 
   <p><a href="/requests/show.ejs">All queries</a></p>
 
+  <p><button id="themeToggle"> 🌑 </button> </p>
+
+
   <% } else { %>
   <p> <a href="/auth/sign-up">Join the universe</a> </p>
   <p> <a href="/auth/sign-in">Enter the universe</a> </p>
+
+  <p><button id="themeToggle"> 🌑 </button> </p>
+
   <% } %>
 </div>
 
 </nav>
+
+<script src="assets/js/app.js"></script>

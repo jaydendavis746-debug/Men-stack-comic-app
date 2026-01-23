@@ -12,7 +12,7 @@ body{
      
 }
 
-.nightMode{
+.nightmode{
     background-color: darkslateblue;
     display: flex;
     flex-direction: column;
@@ -119,4 +119,10 @@ p a {
 button{
     margin:10px 0px ;
     width: 8rem;
+}
+
+#themeToggle {
+  border: none;
+  outline: none;
+  cursor: pointer ;
 }

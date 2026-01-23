@@ -22,9 +22,9 @@ router.get('/show.ejs', async (req, res) => {
 
 const requests = await Request.find().sort({createdAt: -1});
 
-//  user = req.session.user._id;
+const userRequests = await Request.find({ publisher : req.session.user._id})
 
-res.render('requests/show.ejs', {requests} );
+res.render('requests/show.ejs', { requests, userRequests } );
 })
 
 
