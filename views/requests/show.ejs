@@ -15,7 +15,7 @@
 
     <h1>All Quieries</h1>
 
-    <div>
+    
 
     <% requests.forEach((request)=>{ %>
         <% if(request.publisher.equals(user._id.toString() )){ %>
@@ -29,7 +29,7 @@
                 </form> 
             </div>
             </div>
-            </div>
+            
 
         <% } else if(userRequests.length === 0) { %>
             <h2>No quereis have been created </h2>

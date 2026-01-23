@@ -9,7 +9,7 @@ body{
 }
 
 
-.nightmode{
+.nightmode {
     background-color: darkslateblue;
     display: flex;
     flex-direction: column;
@@ -99,6 +99,9 @@ h1{
 button{
     margin-left: 3rem;
 }
+
+
+
 
 #themeToggle {
     margin-left: 0rem;
