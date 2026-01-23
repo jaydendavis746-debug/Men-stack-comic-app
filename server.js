@@ -15,7 +15,7 @@ const app = express()
 import authController from './controllers/auth.js'
 import comicsController from './controllers/comics.js'
 import genresController from './controllers/genres.js'
-import requestsController from './controlllers/requests.js'
+import requestsController from './controllers/requests.js'
 
 import Comic from './models/comics.js'
 
@@ -51,10 +51,6 @@ res.render('index.ejs', {user: req.session.user, comics})
 })
 
 
-app.get('/report', (req, res)=>{
-
-  res.render('report/report.ejs')
-} )
 
 app.use('/auth', authController);
 app.use(isSignedIn);

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const requestSchema = mongooose.Schema({
+const requestSchema = mongoose.Schema({
 
     requestType: {
         type: String,
