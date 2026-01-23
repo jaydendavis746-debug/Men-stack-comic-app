@@ -5,7 +5,7 @@ import User from '../models/users.js'
 
 
 router.get('/', (req, res) => {
-    res.send
+    res.render('requests/index.ejs')
 })
 
 
