@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quieries</title>
 </head>
 <body>
+
+    <h1>All Quieries</h1>
+
+    <% requests.forEach((request)=>{ %>
+        <% if(request.publisher.equals(user._id.toString() )){ %>
+            <div>
+                <p><%= request.requestType></p>
+                <p> <%= request.description%> </p>
+            </div>
+        <% } else{ %>
+            <h2>No quereis have been created </h2>
+            <p>You can make a query  <strong> <a href="/requests">here</a></strong></p>
+       <% } %>
+    })  %>
     
 </body>
 </html>
