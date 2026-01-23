@@ -50,6 +50,11 @@ res.render('index.ejs', {user: req.session.user, comics})
 })
 
 
+app.get('/report', (req, res)=>{
+
+  res.render('report/report.ejs')
+} )
+
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/comics', comicsController);
