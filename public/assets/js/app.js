@@ -1,7 +1,7 @@
 const toggle = document.getElementById('themeToggle');
 
 
-if (localStorage.getItem('theme') === 'night') {   // check value correctly
+if (localStorage.getItem('theme') === 'night') {   
   document.body.classList.add('nightmode');
   toggle.textContent = '☀️';
 } else {
