@@ -17,3 +17,7 @@ const requestSchema = mongooose.Schema({
         ref: 'User',
     },
 })
+
+const Request = mongoose.model('request', requestSchema)
+
+export default Request

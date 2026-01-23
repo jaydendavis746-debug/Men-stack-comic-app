@@ -15,6 +15,7 @@ const app = express()
 import authController from './controllers/auth.js'
 import comicsController from './controllers/comics.js'
 import genresController from './controllers/genres.js'
+import requestsController from './controlllers/requests.js'
 
 import Comic from './models/comics.js'
 
@@ -59,6 +60,7 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/comics', comicsController);
 app.use('/genres', genresController);
+app.use('/requests', requestsController )
 
 
 app.listen(port,  () =>{
