@@ -1,12 +1,12 @@
 
-This is the lik to my deployed page. Hope you enjoy
+This is the link to my deployed page. Hope you enjoy
 https://men-stack-comics-app-c28ddb016a20.herokuapp.com/
 
 
-This is the link to my prject plan via trello
+This is the link to my project plan via trello
 On the trello page includes links to my wireframes and Schema relationships and host my orginal intention with craeting the app.
 It is enjoyable to see how much the finished app both varies and follows my plan hopefully highlighting that projects do not have to be super strict to the plan but that there is flexibilty for changes 
-But that does not mean completely goign against the plan. Though there is flexibilty there should always be some structure you are folloeing to make it easier for yourself to create the app.
+But that does not mean completely going against the plan. Though there is flexibilty there should always be some structure you are folloeing to make it easier for yourself to create the app.
 https://trello.com/b/uP0MiBnO/comics-project-plan
 
 
@@ -44,7 +44,7 @@ A full‑stack **Comic Management App** built with the **MEN stack (MongoDB, Exp
 
 **Frontend** 
 
-* ejs(HTML) / CSS / JavaScript
+* EJS/ CSS / JavaScript
 
 
 **Other Tools**
@@ -113,8 +113,8 @@ run nodemon or node server.js
 ```
 Server will start on:
 
-http://localhost:<port>
-
+http://localhost:(port)
+Whatever your port is defined as for my comic app  port = 3000
 ---
 
 ## 🔌 API Endpoints for comics
