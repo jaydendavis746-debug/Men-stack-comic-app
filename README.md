@@ -1,3 +1,8 @@
+
+This is the lik to my deployed page. Hope you enjoy
+https://men-stack-comics-app-c28ddb016a20.herokuapp.com/
+
+
 This is the link to my prject plan via trello
 On the trello page includes links to my wireframes and Schema relationships and host my orginal intention with craeting the app.
 It is enjoyable to see how much the finished app both varies and follows my plan hopefully highlighting that projects do not have to be super strict to the plan but that there is flexibilty for changes 
