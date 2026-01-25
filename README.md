@@ -17,15 +17,15 @@ A full‑stack **Comic Management App** built with the **MEN stack (MongoDB, Exp
 ---
 
 ## 🚀 Features
-
+* Sign-in/sign-up to an account
+* ➕ Add genres
 * 📚 Browse and view comics details
 * ➕ Add, update, and delete comics
-* ➕ Add genres
 * 🔍 Filter comics via genres
 * ❤️ Heart comics and a most popular comics section on landing page
 * 🌑 Night mode toggle availability
 * ➕ Add a support request
-* 🔍 View and delete  all active queries
+* 🔍 View and delete  all active queries from the specific account.
 * 🧾 RESTful API architecture
 * 🛡️ Secure environment configuration
 * ⚡ Fast and scalable backend with Node & Express
@@ -52,6 +52,9 @@ A full‑stack **Comic Management App** built with the **MEN stack (MongoDB, Exp
 * dotenv
 * nodemon
 * bcrypt
+* morgan
+* express-session
+* method-override
 
 ---
 
